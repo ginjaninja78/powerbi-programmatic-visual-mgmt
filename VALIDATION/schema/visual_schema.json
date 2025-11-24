@@ -1,0 +1,53 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://example.com/visual-standard-schema.json",
+    "title": "Power BI Visual Standard Template Schema",
+    "description": "Schema for validating Power BI visual configuration JSON templates.",
+    "type": "object",
+    "required": ["visualType", "x", "y", "width", "height", "title", "background"],
+    "properties": {
+        "visualType": {
+            "type": "string",
+            "description": "The type of visual (e.g., 'barChart', 'card')."
+        },
+        "x": {
+            "type": "number",
+            "description": "X-coordinate position on the canvas."
+        },
+        "y": {
+            "type": "number",
+            "description": "Y-coordinate position on the canvas."
+        },
+        "width": {
+            "type": "number",
+            "description": "Width of the visual."
+        },
+        "height": {
+            "type": "number",
+            "description": "Height of the visual."
+        },
+        "title": {
+            "type": "object",
+            "description": "Title formatting properties.",
+            "required": ["show", "color"],
+            "properties": {
+                "show": {"type": "boolean"},
+                "color": {"type": "object"}
+            }
+        },
+        "background": {
+            "type": "object",
+            "description": "Background formatting properties.",
+            "required": ["show", "color"],
+            "properties": {
+                "show": {"type": "boolean"},
+                "color": {"type": "object"}
+            }
+        },
+        "dataLabels": {
+            "type": "object",
+            "description": "Data label properties (optional)."
+        }
+    },
+    "additionalProperties": true
+}

@@ -1,0 +1,1 @@
+@echo off\nSET PBIX_FILE=%1\nIF "%PBIX_FILE%"=="" (\n    ECHO ERROR: Please drag and drop a PBIX file onto this script.\n    PAUSE\n    EXIT /B 1\n)\nECHO Starting extraction for %PBIX_FILE%...\npython3 pbix_extractor.py "%PBIX_FILE%"\nECHO Extraction complete. Check the 'extracted_visual_templates' folder in the same directory as the PBIX file.\nPAUSE
